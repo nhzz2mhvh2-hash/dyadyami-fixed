@@ -11,3 +11,4 @@ Transforming a standard travel booking platform into a "Sensational Quiet Luxury
 ## Roadmap
 - P0: Atmospheric Shaders, Smooth Transitions, Next.js 15 Optimization.
 - P1: Ambient Sound, 4K Video Integration, Booking Logic.
+- Next.js: Upgraded to 15.1.12 for security.
