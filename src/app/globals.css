@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --cyan-luxury: #00f2ff;
+}
+
+body {
+  background: black;
+  color: white;
+}
+
+.text-cyan-luxury {
+  color: var(--cyan-luxury);
+}
+
+.bg-cyan-luxury {
+  background-color: var(--cyan-luxury);
+}
+
+.border-cyan-luxury {
+  border-color: var(--cyan-luxury);
+}
+
+.glass-dark {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
