@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import "./tokens.css";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -13,7 +14,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="antialiased bg-black text-white">
+      <body className="antialiased bg-void text-primary">
+        <div className="grain" />
         {children}
       </body>
     </html>

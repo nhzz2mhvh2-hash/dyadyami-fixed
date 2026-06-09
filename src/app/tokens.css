@@ -1,0 +1,657 @@
+/* ============================================================
+   DYADYAMI — LUXURY DESIGN SYSTEM
+   tokens.css
+
+   Philosophy: Every token is a decision. Every decision is
+   intentional. Nothing here is default. Nothing is borrowed.
+   This is the DNA of a sovereign product.
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Cormorant:ital,wght@0,300;0,400;1,300&display=swap');
+
+/* ─────────────────────────────────────────────
+   CUSTOM FONTS
+   Host these locally in production for speed.
+   Cormorant Garamond via Google Fonts (display).
+   Body: system fallback chain until you license
+   Söhne or PP Neue Machina.
+───────────────────────────────────────────── */
+
+:root {
+  /* ── TYPOGRAPHY ─────────────────────────────
+     Two families. One hierarchy. No compromise.
+  ────────────────────────────────────────────── */
+  --font-display:  'Cormorant Garamond', 'Cormorant', Georgia, serif;
+  --font-body:     'Söhne', 'PP Neue Machina', -apple-system, 'Helvetica Neue', Arial, sans-serif;
+  --font-mono:     'Berkeley Mono', 'Fira Code', 'Courier New', monospace;
+
+  /* Type Scale — Major Third (1.25) base 16px */
+  --text-xs:    0.64rem;    /*  10.24px — labels, badges */
+  --text-sm:    0.8rem;     /*  12.80px — captions, metadata */
+  --text-base:  1rem;       /*  16px    — body default */
+  --text-md:    1.25rem;    /*  20px    — lead / intro */
+  --text-lg:    1.563rem;   /*  25px    — subheadings */
+  --text-xl:    1.953rem;   /*  31px    — section titles */
+  --text-2xl:   2.441rem;   /*  39px    — page titles */
+  --text-3xl:   3.052rem;   /*  49px    — hero sub */
+  --text-4xl:   3.815rem;   /*  61px    — hero title */
+  --text-5xl:   4.768rem;   /*  76px    — display */
+  --text-6xl:   5.960rem;   /*  95px    — cinematic */
+  --text-7xl:   7.451rem;   /* 119px    — fullscreen statement */
+
+  /* Display uses Cormorant — loose tracking, editorial feel */
+  --tracking-display:  -0.02em;
+  --tracking-title:    -0.01em;
+  --tracking-body:      0em;
+  --tracking-label:     0.08em;
+  --tracking-overline:  0.15em;
+
+  --leading-tight:   1.1;
+  --leading-snug:    1.3;
+  --leading-normal:  1.6;
+  --leading-relaxed: 1.75;
+  --leading-loose:   2.0;
+
+  --weight-light:    300;
+  --weight-regular:  400;
+  --weight-medium:   500;
+  --weight-semibold: 600;
+
+  /* ── COLOUR ──────────────────────────────────
+     Dark-first palette. The void is the canvas.
+     Gold is earned — use it sparingly.
+  ────────────────────────────────────────────── */
+
+  /* Background layers — deepest to surface */
+  --color-void:        #06060E;   /* absolute background */
+  --color-abyss:       #0A0A16;   /* page background */
+  --color-obsidian:    #0F0F1E;   /* section background */
+  --color-graphite:    #151526;   /* card background */
+  --color-surface:     #1C1C32;   /* elevated surface */
+  --color-overlay:     #242440;   /* overlay / dropdown */
+
+  /* Text hierarchy */
+  --color-text-primary:   #F0EDE6;   /* near-white, warm */
+  --color-text-secondary: #A8A49C;   /* muted body text */
+  --color-text-tertiary:  #5C5A56;   /* disabled / placeholder */
+  --color-text-inverse:   #0A0A16;   /* text on light */
+
+  /* Accent — Gold */
+  --color-gold:           #C9A96E;   /* primary accent */
+  --color-gold-light:     #E8D4A8;   /* gold on dark text */
+  --color-gold-muted:     #8A6E42;   /* subtle gold */
+  --color-gold-glow:      rgba(201, 169, 110, 0.15);  /* gold ambient */
+
+  /* Accent — Platinum (secondary) */
+  --color-platinum:       #B8C0CC;   /* cool silver */
+  --color-platinum-muted: #6B737D;   /* muted silver */
+
+  /* Semantic */
+  --color-available:   #3ECFBB;   /* aurora — available / success */
+  --color-scarce:      #E8A838;   /* amber — limited availability */
+  --color-unavailable: #E04B5A;   /* crimson — sold out / error */
+  --color-info:        #5B8FE8;   /* sapphire — informational */
+
+  /* Borders */
+  --color-border-subtle:  rgba(240, 237, 230, 0.06);
+  --color-border-default: rgba(240, 237, 230, 0.12);
+  --color-border-strong:  rgba(240, 237, 230, 0.22);
+  --color-border-gold:    rgba(201, 169, 110, 0.35);
+
+  /* Glass / frosted surfaces */
+  --color-glass-bg:       rgba(15, 15, 30, 0.65);
+  --color-glass-border:   rgba(240, 237, 230, 0.08);
+  --color-glass-highlight:rgba(240, 237, 230, 0.04);
+
+  /* ── SPACING ─────────────────────────────────
+     8px base grid. Generous by default.
+     Sections breathe at 120–160px vertical.
+  ────────────────────────────────────────────── */
+  --space-1:   0.25rem;   /*  4px */
+  --space-2:   0.5rem;    /*  8px */
+  --space-3:   0.75rem;   /* 12px */
+  --space-4:   1rem;      /* 16px */
+  --space-5:   1.25rem;   /* 20px */
+  --space-6:   1.5rem;    /* 24px */
+  --space-8:   2rem;      /* 32px */
+  --space-10:  2.5rem;    /* 40px */
+  --space-12:  3rem;      /* 48px */
+  --space-16:  4rem;      /* 64px */
+  --space-20:  5rem;      /* 80px */
+  --space-24:  6rem;      /* 96px */
+  --space-32:  8rem;      /* 128px */
+  --space-40:  10rem;     /* 160px */
+
+  /* Section breathing room */
+  --section-padding-y:  clamp(80px, 12vw, 160px);
+  --section-padding-x:  clamp(24px, 6vw, 96px);
+
+  /* ── LAYOUT ──────────────────────────────────*/
+  --max-width:         1440px;
+  --max-width-content: 1200px;
+  --max-width-text:     680px;
+  --max-width-narrow:   480px;
+
+  /* ── BORDER RADIUS ───────────────────────────*/
+  --radius-sm:   4px;
+  --radius-md:   8px;
+  --radius-lg:   16px;
+  --radius-xl:   24px;
+  --radius-2xl:  40px;
+  --radius-full: 9999px;
+
+  /* ── SHADOWS ──────────────────────────────────
+     Shadows on dark bg = glows, not drops.
+     Use sparingly — only for elevation.
+  ────────────────────────────────────────────── */
+  --shadow-sm:     0 1px 3px rgba(0,0,0,0.4);
+  --shadow-md:     0 4px 16px rgba(0,0,0,0.5);
+  --shadow-lg:     0 12px 40px rgba(0,0,0,0.6);
+  --shadow-xl:     0 24px 80px rgba(0,0,0,0.7);
+  --shadow-gold:   0 0 40px rgba(201, 169, 110, 0.15),
+                   0 0 80px rgba(201, 169, 110, 0.05);
+  --shadow-card:   0 1px 0 var(--color-border-subtle),
+                   0 8px 32px rgba(0,0,0,0.4);
+
+  /* ── MOTION ──────────────────────────────────
+     Luxury moves slowly. Weight communicates value.
+     Never snap. Never bounce (unless intentional).
+  ────────────────────────────────────────────── */
+
+  /* Durations */
+  --duration-instant:   80ms;
+  --duration-fast:      180ms;
+  --duration-normal:    320ms;
+  --duration-slow:      520ms;
+  --duration-cinematic: 900ms;
+  --duration-epic:      1400ms;
+
+  /* Easings — cubic-bezier */
+  --ease-enter:   cubic-bezier(0.0, 0.0, 0.2, 1.0);   /* decelerate in */
+  --ease-exit:    cubic-bezier(0.4, 0.0, 1.0, 1.0);   /* accelerate out */
+  --ease-inout:   cubic-bezier(0.4, 0.0, 0.2, 1.0);   /* standard */
+  --ease-luxury:  cubic-bezier(0.16, 1, 0.3, 1);       /* overshoot, then settle */
+  --ease-reveal:  cubic-bezier(0.0, 0.0, 0.1, 1.0);   /* slow reveal */
+
+  /* ── Z-INDEX ──────────────────────────────────*/
+  --z-below:    -1;
+  --z-base:      0;
+  --z-raised:    10;
+  --z-dropdown:  100;
+  --z-sticky:    200;
+  --z-overlay:   300;
+  --z-modal:     400;
+  --z-cursor:    9999;
+
+  /* ── BLUR ────────────────────────────────────*/
+  --blur-sm:   8px;
+  --blur-md:   20px;
+  --blur-lg:   40px;
+  --blur-xl:   80px;
+
+  /* ── GRAIN OPACITY ───────────────────────────
+     SVG noise overlay — near-invisible.
+     Adds "film" quality to the dark surfaces.
+  ────────────────────────────────────────────── */
+  --grain-opacity: 0.035;
+}
+
+
+/* ─────────────────────────────────────────────
+   BASE RESET + DOCUMENT
+───────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  font-weight: var(--weight-regular);
+  line-height: var(--leading-normal);
+  color: var(--color-text-primary);
+  background-color: var(--color-abyss);
+  overflow-x: hidden;
+}
+
+/* Smooth cursor across entire site */
+* { cursor: none; } /* Will be replaced by custom cursor */
+
+/* Selection — branded */
+::selection {
+  background: var(--color-gold-glow);
+  color: var(--color-gold-light);
+}
+
+/* Focus ring — accessible but elegant */
+:focus-visible {
+  outline: 1px solid var(--color-gold);
+  outline-offset: 3px;
+}
+
+
+/* ─────────────────────────────────────────────
+   TYPOGRAPHY UTILITIES
+───────────────────────────────────────────── */
+
+/* Display — Cormorant, editorial */
+.type-display {
+  font-family: var(--font-display);
+  font-weight: var(--weight-light);
+  letter-spacing: var(--tracking-display);
+  line-height: var(--leading-tight);
+}
+
+/* Hero statement */
+.type-hero {
+  font-family: var(--font-display);
+  font-size: clamp(var(--text-4xl), 8vw, var(--text-7xl));
+  font-weight: var(--weight-light);
+  letter-spacing: var(--tracking-display);
+  line-height: var(--leading-tight);
+  color: var(--color-text-primary);
+}
+
+/* Section title */
+.type-title {
+  font-family: var(--font-display);
+  font-size: clamp(var(--text-2xl), 4vw, var(--text-4xl));
+  font-weight: var(--weight-light);
+  letter-spacing: var(--tracking-title);
+  line-height: var(--leading-snug);
+}
+
+/* Subheading — body font, medium */
+.type-heading {
+  font-family: var(--font-body);
+  font-size: var(--text-xl);
+  font-weight: var(--weight-medium);
+  letter-spacing: var(--tracking-body);
+  line-height: var(--leading-snug);
+}
+
+/* Lead / intro paragraph */
+.type-lead {
+  font-family: var(--font-display);
+  font-size: var(--text-md);
+  font-weight: var(--weight-light);
+  font-style: italic;
+  line-height: var(--leading-relaxed);
+  color: var(--color-text-secondary);
+}
+
+/* Body */
+.type-body {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  font-weight: var(--weight-regular);
+  line-height: var(--leading-normal);
+  color: var(--color-text-secondary);
+}
+
+/* Overline — all caps tracking */
+.type-overline {
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  font-weight: var(--weight-medium);
+  letter-spacing: var(--tracking-overline);
+  text-transform: uppercase;
+  color: var(--color-text-tertiary);
+}
+
+/* Label */
+.type-label {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-medium);
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+}
+
+/* Gold accent text */
+.type-gold {
+  color: var(--color-gold);
+}
+
+/* Italic display for editorial moments */
+.type-italic {
+  font-style: italic;
+  font-weight: var(--weight-light);
+}
+
+
+/* ─────────────────────────────────────────────
+   GRAIN OVERLAY
+   Add <div class="grain"> as first child of body.
+───────────────────────────────────────────── */
+.grain {
+  position: fixed;
+  inset: -50%;
+  width: 200%;
+  height: 200%;
+  pointer-events: none;
+  z-index: var(--z-cursor);
+  opacity: var(--grain-opacity);
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  animation: grain-shift 0.5s steps(2) infinite;
+}
+@keyframes grain-shift {
+  0%   { transform: translate(0, 0); }
+  25%  { transform: translate(-2%, -1%); }
+  50%  { transform: translate(1%, 2%); }
+  75%  { transform: translate(-1%, 1%); }
+  100% { transform: translate(2%, -2%); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .grain { animation: none; }
+}
+
+
+/* ─────────────────────────────────────────────
+   LAYOUT UTILITIES
+───────────────────────────────────────────── */
+.container {
+  width: 100%;
+  max-width: var(--max-width-content);
+  margin-inline: auto;
+  padding-inline: var(--section-padding-x);
+}
+
+.container--narrow {
+  max-width: var(--max-width-text);
+}
+
+.section {
+  padding-block: var(--section-padding-y);
+}
+
+/* Editorial grid */
+.grid-editorial {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(var(--space-8), 4vw, var(--space-16));
+}
+
+@media (max-width: 768px) {
+  .grid-editorial { grid-template-columns: 1fr; }
+}
+
+
+/* ─────────────────────────────────────────────
+   GLASS CARD
+───────────────────────────────────────────── */
+.glass-card {
+  background: var(--color-glass-bg);
+  backdrop-filter: blur(var(--blur-md));
+  -webkit-backdrop-filter: blur(var(--blur-md));
+  border: 1px solid var(--color-glass-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-8) var(--space-10);
+}
+
+.glass-card--gold {
+  border-color: var(--color-border-gold);
+  box-shadow: var(--shadow-gold);
+}
+
+
+/* ─────────────────────────────────────────────
+   DIVIDERS
+───────────────────────────────────────────── */
+.divider {
+  border: none;
+  border-top: 1px solid var(--color-border-subtle);
+  margin-block: var(--space-8);
+}
+
+.divider--gold {
+  border-color: var(--color-border-gold);
+}
+
+
+/* ─────────────────────────────────────────────
+   BADGES / PILLS
+───────────────────────────────────────────── */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  font-weight: var(--weight-medium);
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-full);
+  border: 1px solid currentColor;
+}
+
+.badge--gold {
+  color: var(--color-gold);
+  border-color: var(--color-border-gold);
+  background: var(--color-gold-glow);
+}
+
+.badge--available {
+  color: var(--color-available);
+  border-color: rgba(62, 207, 187, 0.3);
+  background: rgba(62, 207, 187, 0.08);
+}
+
+.badge--scarce {
+  color: var(--color-scarce);
+  border-color: rgba(232, 168, 56, 0.3);
+  background: rgba(232, 168, 56, 0.08);
+}
+
+.badge--unavailable {
+  color: var(--color-unavailable);
+  border-color: rgba(224, 75, 90, 0.3);
+  background: rgba(224, 75, 90, 0.08);
+}
+
+
+/* ─────────────────────────────────────────────
+   BUTTONS
+───────────────────────────────────────────── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-3);
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-medium);
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  text-decoration: none;
+  border: none;
+  border-radius: var(--radius-full);
+  padding: var(--space-4) var(--space-8);
+  transition:
+    transform     var(--duration-normal) var(--ease-luxury),
+    box-shadow    var(--duration-normal) var(--ease-luxury),
+    background    var(--duration-fast)   var(--ease-inout),
+    opacity       var(--duration-fast)   var(--ease-inout);
+  cursor: none; /* custom cursor active */
+  white-space: nowrap;
+}
+
+/* Primary — gold */
+.btn--primary {
+  background: var(--color-gold);
+  color: var(--color-void);
+}
+.btn--primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(201, 169, 110, 0.35);
+}
+.btn--primary:active {
+  transform: translateY(0);
+}
+
+/* Secondary — ghost */
+.btn--secondary {
+  background: transparent;
+  color: var(--color-text-primary);
+  border: 1px solid var(--color-border-default);
+}
+.btn--secondary:hover {
+  border-color: var(--color-border-strong);
+  background: rgba(240, 237, 230, 0.04);
+  transform: translateY(-1px);
+}
+
+/* Ghost — minimal */
+.btn--ghost {
+  background: transparent;
+  color: var(--color-gold);
+  padding-inline: 0;
+  border-radius: 0;
+  border-bottom: 1px solid transparent;
+}
+.btn--ghost:hover {
+  border-bottom-color: var(--color-gold);
+}
+
+/* Icon button */
+.btn--icon {
+  width: 48px;
+  height: 48px;
+  padding: 0;
+  border-radius: var(--radius-full);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border-subtle);
+}
+
+
+/* ─────────────────────────────────────────────
+   FORM ELEMENTS
+───────────────────────────────────────────── */
+.input {
+  width: 100%;
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  color: var(--color-text-primary);
+  background: var(--color-graphite);
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--radius-md);
+  padding: var(--space-4) var(--space-5);
+  transition:
+    border-color var(--duration-fast) var(--ease-inout),
+    box-shadow   var(--duration-fast) var(--ease-inout);
+  outline: none;
+}
+
+.input::placeholder {
+  color: var(--color-text-tertiary);
+  letter-spacing: var(--tracking-body);
+}
+
+.input:hover {
+  border-color: var(--color-border-strong);
+}
+
+.input:focus {
+  border-color: var(--color-gold-muted);
+  box-shadow: 0 0 0 3px var(--color-gold-glow);
+}
+
+.input-label {
+  display: block;
+  font-size: var(--text-xs);
+  font-weight: var(--weight-medium);
+  letter-spacing: var(--tracking-overline);
+  text-transform: uppercase;
+  color: var(--color-text-tertiary);
+  margin-bottom: var(--space-2);
+}
+
+
+/* ─────────────────────────────────────────────
+   SCROLL ANIMATIONS (no-JS baseline)
+   Enhanced by GSAP in JS layer.
+───────────────────────────────────────────── */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity   var(--duration-slow) var(--ease-enter),
+    transform var(--duration-slow) var(--ease-enter);
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger delays for reveal groups */
+.reveal-group > *:nth-child(1) { transition-delay: 0ms;   }
+.reveal-group > *:nth-child(2) { transition-delay: 80ms;  }
+.reveal-group > *:nth-child(3) { transition-delay: 160ms; }
+.reveal-group > *:nth-child(4) { transition-delay: 240ms; }
+.reveal-group > *:nth-child(5) { transition-delay: 320ms; }
+.reveal-group > *:nth-child(6) { transition-delay: 400ms; }
+
+
+/* ─────────────────────────────────────────────
+   LINK
+───────────────────────────────────────────── */
+.link {
+  color: var(--color-gold-light);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color var(--duration-fast) var(--ease-inout);
+}
+
+.link:hover {
+  border-color: var(--color-gold-light);
+}
+
+
+/* ─────────────────────────────────────────────
+   SCROLLBAR — branded
+───────────────────────────────────────────── */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--color-void); }
+::-webkit-scrollbar-thumb {
+  background: var(--color-gold-muted);
+  border-radius: var(--radius-full);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-gold);
+}
+
+
+/* ─────────────────────────────────────────────
+   RESPONSIVE HELPERS
+───────────────────────────────────────────── */
+@media (max-width: 1024px) {
+  :root {
+    --section-padding-x: clamp(20px, 5vw, 48px);
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --section-padding-y: clamp(60px, 10vw, 100px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
