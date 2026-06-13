@@ -1,0 +1,3 @@
+## 2025-05-14 - [Accessible Wizard Progress]
+**Learning:** In "luxury" or immersive UIs where default browser styles (like borders/outlines) are often removed for aesthetics, relying on non-semantic elements (divs) for interaction makes the app completely inaccessible to keyboard and screen reader users. Refactoring these to semantic `<nav>` and `<button>` elements with `aria-current` and `aria-label` restores accessibility without compromising the visual "luxury" feel.
+**Action:** Always check for interactive elements disguised as divs or spans, especially in progress indicators and custom navigation. Replace with semantic buttons and ensure they have descriptive ARIA labels, as labels are often visually hidden on mobile.

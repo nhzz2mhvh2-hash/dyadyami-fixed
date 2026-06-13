@@ -28,10 +28,18 @@ export default function WizardPage() {
       <div className="relative z-10 flex-1 flex flex-col items-center justify-center px-4 pt-20">
         <div className="w-full max-w-4xl">
           {/* Progress Indicator */}
-          <div className="flex justify-between mb-12 relative">
+          <nav aria-label="Progress" className="flex justify-between mb-12 relative">
             <div className="absolute top-1/2 left-0 w-full h-[1px] bg-white/5 -z-10" />
             {steps.map((s, i) => (
-              <div key={i} className="flex flex-col items-center gap-2 cursor-pointer" onClick={() => i + 1 < step && setStep(i + 1)}>
+              <button
+                key={i}
+                type="button"
+                aria-current={step === i + 1 ? "step" : undefined}
+                aria-label={`Step ${i + 1}: ${s.title}`}
+                disabled={i + 1 >= step}
+                className="flex flex-col items-center gap-2 cursor-pointer disabled:cursor-default"
+                onClick={() => i + 1 < step && setStep(i + 1)}
+              >
                 <div className={cn("w-3 h-3 rounded-full border-2 transition-all duration-500",
                   step > i + 1 ? "bg-cyan-luxury border-cyan-luxury" :
                   step === i + 1 ? "bg-white border-white scale-125 shadow-[0_0_15px_rgba(255,255,255,0.5)]" :
@@ -40,9 +48,9 @@ export default function WizardPage() {
                 <span className={cn("text-[8px] uppercase tracking-widest hidden md:block", step === i + 1 ? "text-white" : "text-zinc-600")}>
                   {s.title}
                 </span>
-              </div>
+              </button>
             ))}
-          </div>
+          </nav>
 
           <AnimatePresence mode="wait">
             <motion.div
