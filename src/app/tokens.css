@@ -224,9 +224,6 @@ body {
   overflow-x: hidden;
 }
 
-/* Smooth cursor across entire site */
-* { cursor: none; } /* Will be replaced by custom cursor */
-
 /* Selection — branded */
 ::selection {
   background: var(--color-gold-glow);
@@ -483,7 +480,6 @@ body {
     box-shadow    var(--duration-normal) var(--ease-luxury),
     background    var(--duration-fast)   var(--ease-inout),
     opacity       var(--duration-fast)   var(--ease-inout);
-  cursor: none; /* custom cursor active */
   white-space: nowrap;
 }
 

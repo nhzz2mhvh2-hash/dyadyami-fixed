@@ -23,7 +23,7 @@ export default function WizardStepContent() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: idx * 0.1, duration: 0.8 }}
               onClick={() => updateData({ destination: dest.name })}
-              className={`glass-card text-left group transition-all ${data.destination === dest.name ? 'glass-card--gold' : 'hover:border-strong'}`}
+              className={`glass-card text-left group transition-all cursor-pointer ${data.destination === dest.name ? 'glass-card--gold' : 'hover:border-strong'}`}
             >
               <div className="type-overline text-[8px] mb-3 group-hover:text-gold transition-colors tracking-[0.5em]">
                 {dest.region}
