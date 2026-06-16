@@ -1,0 +1,3 @@
+## 2025-05-15 - [Accessibility & Affordance in Luxury Design]
+**Learning:** Custom luxury interfaces often sacrifice accessibility for aesthetics (e.g., hiding system cursors, using non-semantic indicators). Restoring standard browser behaviors (cursors, semantic navigation) provides a foundation that can then be elegantly enhanced without breaking the experience for assistive technology users.
+**Action:** Always prioritize semantic HTML (<nav>, <button>) for progress indicators and ensure interactive elements provide clear visual affordance (cursor-pointer) when default browser styles are removed.
