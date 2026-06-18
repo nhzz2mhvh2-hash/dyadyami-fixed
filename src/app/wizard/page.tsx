@@ -28,21 +28,40 @@ export default function WizardPage() {
       <div className="relative z-10 flex-1 flex flex-col items-center justify-center px-4 pt-20">
         <div className="w-full max-w-4xl">
           {/* Progress Indicator */}
-          <div className="flex justify-between mb-12 relative">
+          <nav aria-label="Journey progress" className="flex justify-between mb-12 relative">
             <div className="absolute top-1/2 left-0 w-full h-[1px] bg-white/5 -z-10" />
-            {steps.map((s, i) => (
-              <div key={i} className="flex flex-col items-center gap-2 cursor-pointer" onClick={() => i + 1 < step && setStep(i + 1)}>
-                <div className={cn("w-3 h-3 rounded-full border-2 transition-all duration-500",
-                  step > i + 1 ? "bg-cyan-luxury border-cyan-luxury" :
-                  step === i + 1 ? "bg-white border-white scale-125 shadow-[0_0_15px_rgba(255,255,255,0.5)]" :
-                  "bg-black border-zinc-800"
-                )} />
-                <span className={cn("text-[8px] uppercase tracking-widest hidden md:block", step === i + 1 ? "text-white" : "text-zinc-600")}>
-                  {s.title}
-                </span>
-              </div>
-            ))}
-          </div>
+            {steps.map((s, i) => {
+              const stepNumber = i + 1;
+              const isCompleted = step > stepNumber;
+              const isActive = step === stepNumber;
+              const isFuture = step < stepNumber;
+
+              return (
+                <button
+                  key={i}
+                  onClick={() => !isFuture && setStep(stepNumber)}
+                  disabled={isFuture}
+                  aria-label={`Step ${stepNumber}: ${s.title}`}
+                  aria-current={isActive ? "step" : undefined}
+                  className={cn(
+                    "flex flex-col items-center gap-2 group transition-all",
+                    isFuture ? "cursor-not-allowed" : "cursor-pointer"
+                  )}
+                >
+                  <div className={cn("w-3 h-3 rounded-full border-2 transition-all duration-500",
+                    isCompleted ? "bg-cyan-luxury border-cyan-luxury" :
+                    isActive ? "bg-white border-white scale-125 shadow-[0_0_15px_rgba(255,255,255,0.5)]" :
+                    "bg-black border-zinc-800 group-hover:border-zinc-500"
+                  )} />
+                  <span className={cn("text-[8px] uppercase tracking-widest hidden md:block transition-colors",
+                    isActive ? "text-white" : "text-zinc-600 group-hover:text-zinc-400"
+                  )}>
+                    {s.title}
+                  </span>
+                </button>
+              );
+            })}
+          </nav>
 
           <AnimatePresence mode="wait">
             <motion.div
@@ -64,10 +83,21 @@ export default function WizardPage() {
               </div>
 
               <div className="mt-12 flex justify-between">
-                <Button variant="ghost" onClick={prevStep} disabled={step === 1} className="text-zinc-500 hover:text-white disabled:opacity-0">
+                <Button
+                  variant="ghost"
+                  onClick={prevStep}
+                  disabled={step === 1}
+                  aria-label="Go back to previous step"
+                  className="text-zinc-500 hover:text-white disabled:opacity-20 disabled:cursor-not-allowed"
+                >
                   <ChevronLeft className="mr-2 w-4 h-4" /> Back
                 </Button>
-                <Button onClick={nextStep} disabled={step === steps.length} className="bg-white text-black hover:bg-cyan-luxury px-12 rounded-none uppercase tracking-widest text-xs h-12 transition-all flex items-center">
+                <Button
+                  onClick={nextStep}
+                  disabled={step === steps.length}
+                  aria-label={step === steps.length ? "Confirm your proposal" : "Continue to next step"}
+                  className="bg-white text-black hover:bg-cyan-luxury px-12 rounded-none uppercase tracking-widest text-xs h-12 transition-all flex items-center disabled:opacity-50 disabled:cursor-not-allowed"
+                >
                   {step === steps.length ? "Confirm Proposal" : "Continue"} <ChevronRight className="ml-2 w-4 h-4" />
                 </Button>
               </div>

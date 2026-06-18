@@ -1,0 +1,3 @@
+## 2025-05-14 - [Aesthetic Accessibility in Minimalist UIs]
+**Learning:** In a "quiet luxury" design system where default browser styles are often stripped away for aesthetic reasons, interactive elements like progress indicators must use semantic `<nav>` and `<button>` tags with explicit `aria-label` and `aria-current` attributes. Hiding disabled buttons (e.g., `opacity-0`) creates confusing layout gaps; using partial opacity (e.g., `opacity-20`) maintains visual balance while communicating state.
+**Action:** Always prefer semantic elements and partial opacity over generic `div`s and hiding elements when building minimalist navigation components.
