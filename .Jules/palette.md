@@ -1,0 +1,3 @@
+## 2026-06-21 - Accessible Progress Indicators in Minimalist UI
+**Learning:** In highly aesthetic "quiet luxury" interfaces, functional elements like progress indicators often sacrifice accessibility for visual cleanliness (e.g., using `div`s instead of `button`s). Restoring accessibility requires using semantic `<nav>` and `<button>` elements with `focus-visible` rings that align with the brand's accent colors (like `cyan-luxury`), ensuring the "invisible" UX remains functional for all users.
+**Action:** Always audit multi-step flows for semantic navigation elements and ensure interactive states (hover/focus) use the project's established luxury tokens.
