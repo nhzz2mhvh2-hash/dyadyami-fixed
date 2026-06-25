@@ -1,0 +1,3 @@
+## 2025-05-15 - [Semantic Progress Indicators]
+**Learning:** In a minimalist "Quiet Luxury" UI, progress dots are often built with non-semantic divs that lack keyboard focus and ARIA context. Converting these to semantic `<nav>`, `<ol>`, and `<button>` elements restores accessibility without compromising the aesthetic. However, standard list elements may collapse if not explicitly given `w-full`, which can break wide-screen layouts.
+**Action:** Always use `<nav>` + `<ol>` + `<button>` for wizard progress. Ensure the container has `w-full` to maintain horizontal distribution and use `aria-current="step"` and `aria-label` for screen reader clarity.
