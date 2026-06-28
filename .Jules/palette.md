@@ -1,0 +1,3 @@
+## 2026-06-28 - Accessible Semantic Progress Indicator
+**Learning:** Custom progress indicators (like step dots) often use non-semantic `div` elements, making them invisible to screen readers and impossible to navigate via keyboard. Refactoring these to a `<nav>` with an `<ol>` and `<button>` elements provides proper semantic structure and focusability while maintaining the minimalist "luxury" aesthetic.
+**Action:** When implementing step-based flows, always use semantic HTML (`nav`, `ol`, `li`, `button`) and descriptive ARIA attributes (`aria-current="step"`, `aria-label`) to ensure the interface is accessible to all users.
