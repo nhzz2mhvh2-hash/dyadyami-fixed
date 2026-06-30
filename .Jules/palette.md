@@ -1,0 +1,3 @@
+## 2026-06-30 - Wizard Progress Accessibility
+**Learning:** Progress indicators (e.g., dots in a wizard) should use semantic <nav> containers and <ol> elements with descriptive aria-label and aria-current="step" to ensure screen reader accessibility and clear structural intent. Interactive dots must be implemented as <button> elements rather than <div> with click handlers to provide native keyboard support and focus management.
+**Action:** Always wrap multi-step progress indicators in a semantic `<nav aria-label="Progress">` and use `<button>` for interactive step indicators, ensuring `aria-current="step"` is applied to the active state.
