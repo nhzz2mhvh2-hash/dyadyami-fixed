@@ -1,0 +1,3 @@
+## 2026-06-30 - Accessible Progress Indicators
+**Learning:** Progress indicators should use semantic <nav> containers and <button> elements with descriptive aria-label and aria-current="step" for keyboard accessibility and screen reader support. To maintain semantic HTML validity, decorative elements like background lines must be siblings to the <ol> within the <nav> rather than children of the list.
+**Action:** Always use <nav aria-label="Progress"> with an <ol> of <button>s for multi-step flows. Use absolute positioning (e.g., top-[6px] for w-3 dots) to center decorative lines visually without breaking semantics.
