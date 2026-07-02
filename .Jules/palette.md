@@ -1,0 +1,3 @@
+## 2026-06-30 - Accessible Wizard Progress Navigation
+**Learning:** Progress indicators in multi-step wizards often fail accessibility by using non-semantic `div` elements with `onClick` handlers. Using a `<nav>` with an `<ol>` and semantic `<button>` elements ensures keyboard and screen reader support. Additionally, setting `disabled` on future/active steps provides clear interactive affordance while maintaining visual consistency.
+**Action:** Always prefer semantic `<nav>` and `<button>` for progress indicators. Ensure that future steps are `disabled` to prevent invalid navigation while keeping them visible for context. Use `aria-current="step"` and descriptive `aria-label`s.
