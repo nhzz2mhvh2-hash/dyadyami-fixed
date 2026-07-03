@@ -1,0 +1,3 @@
+## 2026-06-30 - Accessible Progress Indicators in Luxury UI
+**Learning:** High-end "quiet luxury" designs often sacrifice semantics for aesthetics (e.g., using div-based progress dots). Converting these to semantic `<nav>` and `<ol>` structures with ARIA labels maintains the aesthetic while ensuring the experience is inclusive for screen reader users. Additionally, global `cursor: none` rules significantly degrade accessibility and should be replaced by standard or accessible custom cursors to maintain affordance.
+**Action:** Always audit progress-like components for `<nav>` wrappers and ensure interactive elements have standard cursors (`pointer`) to provide immediate feedback, even in minimalist designs.
