@@ -1,0 +1,3 @@
+## 2026-06-30 - Accessible Progress Indicators in Luxury Design Systems
+**Learning:** In "Quiet Luxury" interfaces where interactive elements often strip default styles (like borders or backgrounds) to maintain a minimalist aesthetic, switching to semantic elements like `<button>` and `<ol>` requires explicit CSS resets (`bg-transparent`, `list-none`, `p-0`) to prevent visual regressions while gaining accessibility benefits (keyboard focus, screen reader announcements).
+**Action:** Always use semantic interactive elements for progress indicators and navigation, even when the design requires a "non-button" look, by layering accessible roles and ARIA attributes over cleaned-up semantic foundations.
