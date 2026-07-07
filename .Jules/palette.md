@@ -1,0 +1,3 @@
+## 2026-06-30 - Progress Indicator Accessibility
+**Learning:** Progress indicators (e.g., dots in a wizard) should use semantic <nav> containers and <button> elements with descriptive aria-label and aria-current="step". To maintain horizontal distribution in flex layouts, the <nav> and <ol> containers must be explicitly set to 'w-full'. To maintain semantic HTML validity, decorative elements like background lines must be siblings to the <ol> within the <nav> rather than children of the list; use absolute positioning (e.g., top-[6px] for w-3 dots) to center the line visually.
+**Action:** Always wrap multi-step progress dots in a <nav> with an <ol> and use <button> elements for interactivity, ensuring 'w-full' is applied to containers for correct layout.
