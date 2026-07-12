@@ -1,0 +1,3 @@
+## 2026-06-30 - Semantic Wizard Progress Indicators
+**Learning:** In minimalist "quiet luxury" designs, progress indicators often use decorative dots that are easily overlooked as non-interactive elements. Implementing these as simple `div`s breaks accessibility. Using a semantic `<nav>` with an `<ol>` and `<button>` elements ensures the interface is accessible to keyboard and screen reader users while maintaining the high-end "void" aesthetic.
+**Action:** Always implement multi-step progress indicators using semantic navigation structures and interactive elements with descriptive ARIA labels and `aria-current="step"` indicators.
