@@ -19,11 +19,13 @@ export default function WizardStepContent() {
           {destinations.map((dest, idx) => (
             <motion.button
               key={dest.id}
+              type="button"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: idx * 0.1, duration: 0.8 }}
               onClick={() => updateData({ destination: dest.name })}
               className={`glass-card text-left group transition-all ${data.destination === dest.name ? 'glass-card--gold' : 'hover:border-strong'}`}
+              aria-pressed={data.destination === dest.name}
             >
               <div className="type-overline text-[8px] mb-3 group-hover:text-gold transition-colors tracking-[0.5em]">
                 {dest.region}
