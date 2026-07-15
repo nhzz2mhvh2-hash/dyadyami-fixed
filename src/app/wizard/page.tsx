@@ -28,21 +28,35 @@ export default function WizardPage() {
       <div className="relative z-10 flex-1 flex flex-col items-center justify-center px-4 pt-20">
         <div className="w-full max-w-4xl">
           {/* Progress Indicator */}
-          <div className="flex justify-between mb-12 relative">
-            <div className="absolute top-1/2 left-0 w-full h-[1px] bg-white/5 -z-10" />
-            {steps.map((s, i) => (
-              <div key={i} className="flex flex-col items-center gap-2 cursor-pointer" onClick={() => i + 1 < step && setStep(i + 1)}>
-                <div className={cn("w-3 h-3 rounded-full border-2 transition-all duration-500",
-                  step > i + 1 ? "bg-cyan-luxury border-cyan-luxury" :
-                  step === i + 1 ? "bg-white border-white scale-125 shadow-[0_0_15px_rgba(255,255,255,0.5)]" :
-                  "bg-black border-zinc-800"
-                )} />
-                <span className={cn("text-[8px] uppercase tracking-widest hidden md:block", step === i + 1 ? "text-white" : "text-zinc-600")}>
-                  {s.title}
-                </span>
-              </div>
-            ))}
-          </div>
+          <nav aria-label="Progress" className="mb-12 relative w-full">
+            <div className="absolute top-[6px] left-0 w-full h-[1px] bg-white/5 -z-10" />
+            <ol className="flex justify-between w-full list-none p-0 m-0">
+              {steps.map((s, i) => (
+                <li key={i} className="flex-1">
+                  <button
+                    type="button"
+                    className="flex flex-col items-center gap-2 group focus-visible:ring-1 focus-visible:ring-gold focus-visible:ring-offset-4 outline-none transition-all disabled:cursor-default w-full bg-transparent border-none p-0"
+                    onClick={() => setStep(i + 1)}
+                    disabled={i + 1 >= step}
+                    aria-label={`Go to Step ${i + 1}: ${s.title}`}
+                    aria-current={step === i + 1 ? "step" : undefined}
+                  >
+                    <div className={cn("w-3 h-3 rounded-full border-2 transition-all duration-500",
+                      step > i + 1 ? "bg-cyan-luxury border-cyan-luxury" :
+                      step === i + 1 ? "bg-white border-white scale-125 shadow-[0_0_15px_rgba(255,255,255,0.5)]" :
+                      "bg-black border-zinc-800"
+                    )} />
+                    <span className={cn("text-[8px] uppercase tracking-widest hidden md:block transition-colors",
+                      step === i + 1 ? "text-white" :
+                      (i + 1 < step ? "text-zinc-600 group-hover:text-zinc-400" : "text-zinc-600")
+                    )}>
+                      {s.title}
+                    </span>
+                  </button>
+                </li>
+              ))}
+            </ol>
+          </nav>
 
           <AnimatePresence mode="wait">
             <motion.div
