@@ -12,6 +12,7 @@ module.exports = {
         gold: 'var(--color-gold)',
         primary: 'var(--color-text-primary)',
         secondary: 'var(--color-text-secondary)',
+        'cyan-luxury': 'var(--cyan-luxury)',
       },
       fontFamily: {
         serif: ['var(--font-display)'],
