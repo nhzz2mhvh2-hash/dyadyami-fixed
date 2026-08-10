@@ -1,0 +1,5 @@
+# Palette's Journal - Critical UX & Accessibility Learnings
+
+## 2026-06-30 - Quiet Luxury Progress Indicator Accessibility
+**Learning:** In minimalist quiet luxury interfaces, step-by-step progress lines and dots are often built using decorative, non-semantic div elements to bypass browser defaults. This renders the wizard inaccessible to keyboard and screen-reader users. Translating these elements into semantic HTML (`<nav>`, `<ol>`, `<li>`, and `<button type="button">`) is completely possible without compromising the high-end Aman-inspired minimalist aesthetic. Specifically, wrapping nested visual dots within standard transparent-background buttons that have absolute cursor pointers, combined with bespoke focus ring styles (using high luxury offsets like `ring-offset-4` on a void/black background), delivers an exceptionally clean, responsive, and completely accessible navigation pattern.
+**Action:** Always start any custom navigation component by building the semantic HTML bone structure first (<nav>, <ol>, <button type="button">) and apply 'appearance-none' and 'bg-transparent' style overrides, rather than utilizing inert visual divs for click-events.
