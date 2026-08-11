@@ -1,0 +1,3 @@
+## 2026-06-30 - Standardizing Wizard Progress Interaction and Cursor Affordances
+**Learning:** Custom visual cursor suppression (e.g. `cursor: none` properties) breaks expected standard web usability, screen-reader click cues, and accessibility flows. Additionally, progress indicator dots within step-by-step flows require a semantic `<nav>` structure and a sibling decoration line to ensure high screen reader compatibility while maintaining visually consistent styling.
+**Action:** Always provide standard cursors, sibling layout nodes for progress indicators, and precise `aria-current="step"` indicators with appropriate keyboard navigation capabilities on dot indicators.
