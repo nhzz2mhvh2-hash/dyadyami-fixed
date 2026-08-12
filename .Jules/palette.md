@@ -1,0 +1,5 @@
+# Palette Journal - Critical UX/accessibility learnings
+
+## 2026-06-30 - Cinematic Progress Indicator Accessibility
+**Learning:** Progress bars and steps in premium/luxury interactive interfaces (like booking wizards) are often built using generic, nested layout divs to easily control cinematic transitions (e.g. GSAP, Framer Motion) and custom visual shapes (such as minimalist dots). However, this completely strips out semantic and screen-reader context, as well as keyboard interaction. Standardizing them with `<nav>`, `<ol>`, `<li>`, and `<button type="button">` with custom `aria-label` and `aria-current="step"` retains exact visual structure and cinematic support while significantly enhancing accessibility.
+**Action:** When working on luxury design systems with non-standard visual step-indicators, wrap the indicator in a `<nav aria-label="Progress">`, structure list elements inside an `<ol>` / `<li>`, and always use accessible buttons equipped with proper aria labels and custom luxury focus indicators that integrate perfectly into the minimalist layout.
