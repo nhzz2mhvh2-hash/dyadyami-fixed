@@ -1,0 +1,3 @@
+## 2026-06-30 - Accessible Focus Indicators for Icon-Only Luxury Navigation Triggers
+**Learning:** Minimalist icon-only controls (e.g., hamburger lines) in void-black dark themes lack default text labels and visual contrast when focused via keyboard. Adding explicit `aria-label`, `type="button"`, and theme-aware `focus-visible:ring-1 focus-visible:ring-cyan-luxury` ensures screen readers and keyboard users can navigate without breaking the minimalist luxury aesthetic.
+**Action:** Always verify icon-only buttons have descriptive `aria-label` attributes and subtle, high-contrast focus rings styled with theme tokens rather than rely on browser defaults.
