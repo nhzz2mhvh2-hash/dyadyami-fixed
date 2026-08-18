@@ -1,0 +1,3 @@
+## 2026-06-30 - Accessible Step Progress Indicators in Custom Wizard Layouts
+**Learning:** In multi-step wizards, custom visual progress indicators (such as styled dots/lines) built with non-interactive elements like `div` lack screen reader structure and keyboard affordance. Using `<nav aria-label="...">` with an `<ol>` list and `<button>` elements with `aria-current="step"` and descriptive `aria-label`s provides complete keyboard accessibility without compromising luxury visual aesthetics.
+**Action:** Always structure wizard progress indicators using semantic navigation lists and interactive `<button>` elements with clear focus rings and `aria-current` state indicators.
