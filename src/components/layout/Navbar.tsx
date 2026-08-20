@@ -19,7 +19,11 @@ export default function Navbar() {
         ))}
       </div>
 
-      <button className="w-12 h-12 flex flex-col items-center justify-center gap-1.5 group">
+      <button
+        type="button"
+        aria-label="Toggle navigation menu"
+        className="w-12 h-12 flex flex-col items-center justify-center gap-1.5 group cursor-pointer focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gold rounded-sm"
+      >
         <div className="w-6 h-[1px] bg-primary group-hover:bg-gold transition-colors" />
         <div className="w-6 h-[1px] bg-primary group-hover:bg-gold transition-colors" />
       </button>
