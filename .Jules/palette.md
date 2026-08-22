@@ -1,0 +1,3 @@
+## 2026-06-30 - Accessible Header Navigation in Minimalist Quiet Luxury UI
+**Learning:** Minimalist header navigation often uses static `<div>` tags for logos and icon buttons without `type="button"` or focus indicators to preserve minimalist aesthetics. Adding semantic `<a>` links and `<button type="button">` with `focus-visible:ring-gold` maintains the quiet luxury aesthetic while ensuring keyboard accessibility and screen reader support.
+**Action:** Always ensure header branding is a semantic link and icon controls have explicit `type="button"`, ARIA labels, and subtle gold focus-visible rings.

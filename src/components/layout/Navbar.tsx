@@ -9,17 +9,31 @@ export default function Navbar() {
       transition={{ duration: 1, delay: 0.5 }}
       className="fixed top-0 left-0 w-full z-50 p-8 flex justify-between items-center"
     >
-      <div className="type-display text-2xl tracking-tighter text-primary">DYADYAMI</div>
+      <a
+        href="/"
+        className="type-display text-2xl tracking-tighter text-primary hover:text-gold transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gold rounded-sm"
+        aria-label="DYADYAMI Home"
+      >
+        DYADYAMI
+      </a>
 
       <div className="hidden md:flex gap-12">
         {['Destinations', 'Experiences', 'Private Sales'].map((item) => (
-          <a key={item} href="#" className="type-label text-[9px] text-secondary hover:text-gold transition-all tracking-[0.4em]">
+          <a
+            key={item}
+            href="#"
+            className="type-label text-[9px] text-secondary hover:text-gold transition-all tracking-[0.4em] focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gold rounded-sm"
+          >
             {item}
           </a>
         ))}
       </div>
 
-      <button className="w-12 h-12 flex flex-col items-center justify-center gap-1.5 group">
+      <button
+        type="button"
+        aria-label="Open navigation menu"
+        className="w-12 h-12 flex flex-col items-center justify-center gap-1.5 group rounded-sm focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gold cursor-pointer"
+      >
         <div className="w-6 h-[1px] bg-primary group-hover:bg-gold transition-colors" />
         <div className="w-6 h-[1px] bg-primary group-hover:bg-gold transition-colors" />
       </button>
