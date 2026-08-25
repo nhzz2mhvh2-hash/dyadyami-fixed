@@ -1,0 +1,3 @@
+## 2026-06-30 - Accessible Progress Indicators in Dark Luxury Interfaces
+**Learning:** Generic flex container `div`s with `onClick` handlers for multi-step progress indicators break keyboard accessibility and screen reader navigation. Converting them to `<nav>` and `<ol>` lists with `<button type="button">`, `aria-current="step"`, clear `aria-label` descriptions, and focus-visible rings preserves aesthetic minimal elegance while providing full screen reader and keyboard accessibility.
+**Action:** Always wrap wizard step dots/indicators in semantic `<nav>` and `<ol>` structures with `<button type="button">` interactive elements and explicit `aria-label` / `aria-current` states.
